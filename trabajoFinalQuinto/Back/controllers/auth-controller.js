@@ -4,8 +4,8 @@ const generateToken = require('../helpers/generator-token');
 
 
 let auth = (req, res) => {
-      let email = req.body.email
-      let password = req.body.password
+      let email = req.body.email;
+      let password = req.body.password;
       console.log("Email", email);
       console.log("Password", password);
 
