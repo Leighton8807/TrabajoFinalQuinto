@@ -6,6 +6,13 @@ const users = require('./routes/users');
 const signingKey = require('./config/keys');
 const cookieParser = require('cookie-parser');
 const dataBase = require('./DB/DB');
+const jwtSender = require('./routes/jwtSender'); 
+const addProduct = require('./routes/addProduct'); 
+const actualizarProducto = require('./routes/actualizarProducto'); 
+const deleteAProduct = require('./routes/deleteProduct');
+const comprarProducto = require('./routes/buyProduct'); 
+const getUserInfo = require('./routes/userInfo'); 
+const products = require('./routes/producto'); 
 
 const rest = new(require('rest-mssql-nodejs'))({
   user: dataBase.user,
@@ -23,6 +30,14 @@ let port = 10101;
 app.use('/register', register);
 app.use('/auth', auth);
 app.use('/users', users);
+app.use('/comprarProducto', comprarProducto); 
+app.use('/getUserInfo', getUserInfo); 
+app.use('/deleteAProduct', deleteAProduct);
+app.use('/actualizarProducto', actualizarProducto); 
+app.use('/auth', auth); 
+app.use('/products', products); 
+app.use('/readToken', jwtSender);
+app.use('/addProduct', addProduct);
 
 
 app.listen(port, () => {

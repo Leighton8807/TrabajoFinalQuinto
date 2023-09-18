@@ -1,7 +1,7 @@
 const { check, validationResult } = require('express-validator');
 
 
-validatorParams = [
+let validatorParams = [
   check('correo').isEmail(),
   check('contra').isLength({ min: 8, max: 15}),
   check('nombre').isLength({ min: 1, max: 255}),
