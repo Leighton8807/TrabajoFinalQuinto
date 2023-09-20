@@ -14,12 +14,6 @@ const comprarProducto = require('./routes/buyProduct');
 const getUserInfo = require('./routes/userInfo'); 
 const products = require('./routes/producto'); 
 
-const rest = new(require('rest-mssql-nodejs'))({
-  user: dataBase.user,
-  password: dataBase.password,
-  database: dataBase.database
- 
-})
 
 const app = express()
   .use(bodyParser.json())
@@ -34,7 +28,6 @@ app.use('/comprarProducto', comprarProducto);
 app.use('/getUserInfo', getUserInfo); 
 app.use('/deleteAProduct', deleteAProduct);
 app.use('/actualizarProducto', actualizarProducto); 
-app.use('/auth', auth); 
 app.use('/products', products); 
 app.use('/readToken', jwtSender);
 app.use('/addProduct', addProduct);

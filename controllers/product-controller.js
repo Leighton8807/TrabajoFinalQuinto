@@ -1,6 +1,6 @@
 const ProductRepo = require('../repos/productRepo.js');
+const CompraRepo = require('../repos/compraRepo.js');
 const UseRepo = require('../repos/userRepo');
-const enviarCorreo = require('../repos/enviarCorreo');
 const validarAdmin = require('../middleware/validarAdmin');
 
 //se obtiene los productos y los devuelve como json

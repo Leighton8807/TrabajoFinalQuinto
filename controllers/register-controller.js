@@ -1,5 +1,5 @@
 const bcrypt = require('bcryptjs');
-const UseRepo = require('../repos/UserRepo');
+const UseRepo = require('../repos/userRepo');
 
 // Registra un usuario
 let register = (req, res) => {
